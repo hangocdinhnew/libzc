@@ -19,4 +19,9 @@ pub fn build(b: *std.Build) void {
     });
 
     b.installArtifact(lib);
+    b.installDirectory(.{
+        .source_dir = b.path("include/"),
+        .install_dir = .header,
+        .install_subdir = "",
+    });
 }

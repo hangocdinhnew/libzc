@@ -1,4 +1,4 @@
-pub inline fn __exit(exit: i32) noreturn {
+pub export fn _exit(exit: i32) noreturn {
     asm volatile (
         \\ movq $60, %rax
         \\ syscall
