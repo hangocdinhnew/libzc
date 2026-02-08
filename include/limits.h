@@ -1,3 +1,6 @@
+/* SPDX-FileCopyrightText: 2026 hangocdinhnew */
+/* SPDX-License-Identifier: BSD-3-Clause */
+
 #ifndef __LIBZC_LIMITS_H
 #define __LIBZC_LIMITS_H
 

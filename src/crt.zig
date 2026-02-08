@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 hangocdinhnew
+// SPDX-License-Identifier: BSD-3-Clause
+
 const root = @import("root");
 
 extern fn main(argc: i32, argv: [*]const [*:0]u8, envp: [*]const [*:0]u8) i32;

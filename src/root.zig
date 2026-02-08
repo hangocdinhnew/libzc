@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 hangocdinhnew
+// SPDX-License-Identifier: BSD-3-Clause
+
 const std = @import("std");
 
 pub const syscalls = @import("syscalls.zig");
