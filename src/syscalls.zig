@@ -5,7 +5,6 @@ const linux_x86_64 = @import("syscalls/linux_x86_64.zig");
 const linux_aarch64 = @import("syscalls/linux_aarch64.zig");
 const macos_x86_64 = @import("syscalls/macos_x86_64.zig");
 const macos_aarch64 = @import("syscalls/macos_aarch64.zig");
-const windows = @import("syscalls/windows.zig");
 
 const builtin = @import("builtin");
 
@@ -20,11 +19,6 @@ const backend = switch (builtin.target.os.tag) {
         .x86_64 => macos_x86_64,
         .aarch64 => macos_aarch64,
         else => @compileError("Unsupported macOS architecture"),
-    },
-
-    .windows => switch (builtin.target.cpu.arch) {
-        .x86_64 => windows,
-        else => @compileError("Windows ARM not supported yet"),
     },
 
     else => @compileError("Unsupported operating system"),
