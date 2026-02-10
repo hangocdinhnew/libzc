@@ -5,7 +5,7 @@ const root = @import("root");
 
 extern fn main(argc: i32, argv: [*]const [*:0]u8, envp: [*]const [*:0]u8) i32;
 
-pub fn _start() callconv(.naked) noreturn {
+pub fn startfunction() callconv(.naked) noreturn {
     asm volatile (
         \\ movq %rsp, %rdi
         \\ callq _start_impl

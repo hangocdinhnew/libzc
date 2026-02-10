@@ -5,7 +5,6 @@ const std = @import("std");
 
 pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{ .default_target = .{
-        .os_tag = .freestanding,
         .abi = .none,
     } });
     const optimize = b.standardOptimizeOption(.{});
@@ -20,6 +19,8 @@ pub fn build(b: *std.Build) void {
         .name = "zc",
         .root_module = mod,
     });
+
+    lib.pie = true;
 
     b.installArtifact(lib);
     b.installDirectory(.{
