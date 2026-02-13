@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 hangocdinhnew
+//
+// SPDX-License-Identifier: BSD-3-Clause
+
 pub inline fn _exit(status: i32) noreturn {
     asm volatile (
         \\ mov x8, #93

@@ -1,3 +1,9 @@
+/*
+ * SPDX-FileCopyrightText: 2026 hangocdinhnew
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
 #ifndef __LIBZC_BITS_HELPER_H
 #define __LIBZC_BITS_HELPER_H
 
