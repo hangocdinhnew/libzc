@@ -17,7 +17,7 @@ extern fn main(argc: i32, argv: [*]const [*c]u8) i32;
 
 pub fn startfunction() callconv(.naked) noreturn {
     switch (builtin.target.os.tag) {
-        .linux, .macos => switch (builtin.target.cpu.arch) {
+        .linux => switch (builtin.target.cpu.arch) {
             .x86_64 => {
                 asm volatile (
                     \\ movq %rsp, %rdi
@@ -32,7 +32,25 @@ pub fn startfunction() callconv(.naked) noreturn {
                 );
             },
 
-            else => @compileError("Unsupported Linux/MacOS Architecture"),
+            else => @compileError("Unsupported Linux Architecture"),
+        },
+
+        .macos => switch (builtin.target.cpu.arch) {
+            .x86_64 => {
+                asm volatile (
+                    \\ movq %rsp, %rdi
+                    \\ callq __start_impl
+                );
+            },
+
+            .aarch64 => {
+                asm volatile (
+                    \\mov x0, sp
+                    \\bl __start_impl
+                );
+            },
+
+            else => @compileError("Unsupported MacOS Architecture"),
         },
 
         else => @compileError("Unsupported platform"),
