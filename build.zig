@@ -16,7 +16,7 @@ pub fn build(b: *std.Build) void {
     });
 
     const lib = b.addLibrary(.{
-        .name = "zc",
+        .name = "c",
         .root_module = mod,
     });
 
